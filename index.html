@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardy Wiranto</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+
+        nav {
+            flex: 1;
+            text-align: right;
+        }
+
+        nav ul {
+            display: inline-block;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #555;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            border: 3px solid #ff523b;
+            padding: 8px 12px;
+        }
+
+        .logo span {
+            color: #ff523b;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: auto;
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .col-2 {
+            flex-basis: 50%;
+            min-width: 300px;
+        }
+
+        .col-2 img {
+            max-width: 100%;
+            padding: 50px 0;
+        }
+
+        .col-2 h1 {
+            font-size: 50px;
+            line-height: 60px;
+            margin: 25px 0;
+        }
+
+        .header {
+            background: radial-gradient(#fff, #ffd6d6);
+        }
+
+        .header .row {
+            margin-top: 70px;
+        }
+
+        .categories {
+            margin: 70px 0;
+        }
+
+        .col-3 {
+            flex-basis: 30%;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+
+        .col-3 img {
+            width: 100%;
+        }
+
+        .small-container {
+            max-width: 1080px;
+            margin: auto;
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        .col-4 {
+            flex-basis: 25%;
+            padding: 10px;
+            min-width: 200px;
+            margin-bottom: 50px;
+            transition: transform 0.5s;
+        }
+
+        .col-4 img {
+            width: 100%;
+            margin-bottom: 12px;
+        }
+
+        .title {
+            text-align: center;
+            margin: 0 auto 80px;
+            position: relative;
+            line-height: 60px;
+            color: #555;
+        }
+
+        .title::after {
+            content: "";
+            background: #ff523b;
+            width: 80px;
+            height: 5px;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        h4 {
+            color: #555;
+            font-weight: normal;
+            margin-bottom: 8px;
+        }
+
+        .col-4 p {
+            font-size: 14px;
+        }
+
+        .rating {
+            margin-bottom: 6px;
+        }
+
+        .rating .fas {
+            color: #ff523b;
+        }
+
+        .rating .far {
+            color: #ff523b;
+        }
+
+        .col-4:hover {
+            transform: translateY(-5px);
+        }
+
+        .offer {
+            background: radial-gradient(#fff, #ffd6d6);
+            margin-top: 80px;
+            padding: 30px 0;
+        }
+
+        .col-2 .offer-img {
+            padding: 50px;
+        }
+
+        small {
+            color: #555;
+        }
+
+        .col-3 p {
+            font-size: 14px;
+            margin: 12px 0;
+            color: #777777;
+        }
+
+        .brands {
+            margin: 100px auto;
+        }
+
+        .col-5 {
+            width: 160px;
+        }
+
+        .col-5 img {
+            width: 100%;
+            cursor: pointer;
+            filter: grayscale(100%);
+        }
+
+        .col-5 img:hover {
+            width: 100%;
+            cursor: pointer;
+            filter: grayscale(0);
+        }
+
+        .footer {
+            background: #000;
+            color: #8a8a8a;
+            font-size: 14px;
+            padding: 60px 0 20px;
+        }
+
+        .footer p {
+            color: #8a8a8a;
+        }
+
+        .footer h3 {
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .footer-col-1,
+        .footer-col-2,
+        .footer-col-3,
+        .footer-col-4 {
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col-1 {
+            flex-basis: 30%;
+        }
+
+        .footer-col-2 {
+            flex: 1;
+            text-align: center;
+        }
+
+        .footer-col-2 img {
+            width: 180px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col-3,
+        .footer-col-4 {
+            flex-basis: 12%;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col-3 li a,
+        .footer-col-4 li a {
+            color: #8a8a8a;
+            margin-bottom: 12px;
+        }
+
+        .app-logo {
+            margin-top: 20px;
+        }
+
+        .app-logo img {
+            width: 140px;
+        }
+
+        .footer hr {
+            border: none;
+            background: #b5b5b5;
+            height: 1px;
+            margin: 20px 0;
+        }
+
+        .copyright {
+            text-align: center;
+        }
+
+        .menu-icon {
+            width: 28px;
+            margin-left: 20px;
+            display: none;
+        }
+
+        @media only screen and (max-width: 800px) {
+            nav ul {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                background: #333;
+                width: 100%;
+                overflow: hidden;
+                transition: max-height 0.5s;
+            }
+
+            nav ul li {
+                display: block;
+                margin-right: 50px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
+            nav ul li a {
+                color: #fff;
+            }
+
+            .menu-icon {
+                display: block;
+                cursor: pointer;
+            }
+        }
+
+        .row-2 {
+            justify-content: space-between;
+            margin: 100px auto 50px;
+        }
+
+        select {
+            border: 1px solid #ff523b;
+            padding: 5px 8px;
+        }
+
+        select:focus {
+            outline: none;
+        }
+
+        .page-btn {
+            margin: 0 auto 80px;
+        }
+
+        .page-btn span {
+            display: inline-block;
+            border: 1px solid #ff523b;
+            margin-left: 10px;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+        }
+
+        .page-btn span:hover {
+            background: #ff523b;
+            color: #ffffff;
+        }
+
+        .single-product {
+            margin-top: 80px;
+        }
+
+        .single-product .col-2 img {
+            padding: 0;
+        }
+
+        .single-product .col-2 {
+            padding: 20px;
+        }
+
+        .single-product h4 {
+            margin: 20px 0;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .single-product select {
+            display: block;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .single-product input {
+            width: 50px;
+            height: 40px;
+            padding-left: 10px;
+            font-size: 20px;
+            margin-right: 10px;
+            border: 1px solid #ff523b;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .single-product .fas {
+            color: #ff523b;
+            margin-left: 10px;
+        }
+
+        .small-img-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .small-img-col {
+            flex-basis: 24%;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .row {
+                text-align: center;
+            }
+
+            .col-2,
+            .col-3,
+            .col-4 {
+                flex-basis: 100%;
+            }
+
+            .single-product .row {
+                text-align: left;
+            }
+
+            .single-product .col-2 {
+                padding: 20px 0;
+            }
+
+            .single-product h1 {
+                font-size: 26px;
+                line-height: 32px;
+            }
+
+            .cart-info p {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="/">Hardy<span>Store</span></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#">Produk</a></li>
+                    <li><a href="#">Tentang</a></li>
+                    <li><a href="#">Kontak</a></li>
+                    <li><a href="#">Akun</a></li>
+                </ul>
+            </nav>
+            <a href="#"><img src="https://i.ibb.co/PNjjx3y/cart.png" alt="cart" width="30px" height="30px" /></a>
+            <img src="https://i.ibb.co/6XbqwjD/menu.png" alt="menu" class="menu-icon" onclick="menutoggle()" />
+        </div>
+    </div>
+
+    <div class="small-container">
+        <div class="row row-2">
+            <h2>Semua Produk</h2>
+            <select>
+                <option value="">Urutkan Berdasarkan</option>
+                <option value="">Harga</option>
+                <option value="">Popularitas</option>
+                <option value="">Rating</option>
+                <option value="">Terlaris</option>
+            </select>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <img src="https://i.ibb.co/47Sk9QL/product-1.jpg" alt="" />
+                <h4>Kaos Pria</h4>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <p>Rp 100.000</p>
+            </div>
+
+            <div class="col-4">
+                <img src="https://i.ibb.co/b7ZVzYr/product-2.jpg" alt="" />
+                <h4>Sepatu Lari</h4>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <p>Rp 200.000</p>
+            </div>
+
+            <div class="col-4">
+                <img src="https://i.ibb.co/KsMVr26/product-3.jpg" alt="" />
+                <h4>Celana Pria</h4>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p>Rp 180.000</p>
+            </div>
+
+            <div class="col-4">
+                <img src="https://i.ibb.co/0cMfpcr/product-4.jpg" alt="" />
+                <h4>Kaos Santai</h4>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <p>Rp 300.000</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <img src="https://i.ibb.co/47Sk9QL/product-1.jpg" alt="" />
+                <h4>Kaos Pria</h4>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <p>Rp 140.000</p>
+            </div>
+
+            <div class="col-4">
+                <img src="https://i.ibb.co/b7ZVzYr/product-2.jpg" alt="" />
+                <h4>Sepatu Olahraga</h4>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <p>Rp 430.000</p>
+            </div>
+
+            <div class="col-4">
+                <img src="https://i.ibb.co/KsMVr26/product-3.jpg" alt="" />
+                <h4>Celana Lari</h4>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p>Rp 130.000</p>
+            </div>
+
+            <div class="col-4">
+                <img src="https://i.ibb.co/0cMfpcr/product-4.jpg" alt="" />
+                <h4>Kaos Pria</h4>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <p>Rp 120.000</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <img src="https://i.ibb.co/bQ5t8bR/product-5.jpg" alt="" />
+                <h4>Sepatu Pria</h4>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <p>Rp 600.000</p>
+            </div>
+
+            <div class="col-4">
+                <img src="https://i.ibb.co/vVpTyBD/product-6.jpg" alt="" />
+                <h4>Kaos Pria puma</h4>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <p>Rp 130.000</p>
+            </div>
+
+            <div class="col-4">
+                <img src="https://i.ibb.co/hR5FGwH/product-7.jpg" alt="" />
+                <h4>Kaos Kaki</h4>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p>Rp 100.000</p>
+            </div>
+
+            <div class="col-4">
+                <img src="https://i.ibb.co/QfCgdXZ/product-8.jpg" alt="" />
+                <h4>Jam Tangan</h4>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <p>Rp 300.000</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <img src="https://i.ibb.co/nw5xZwk/product-9.jpg" alt="" />
+                <h4>Jam Tangan</h4>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <p>Rp 1.000.000</p>
+            </div>
+
+            <div class="col-4">
+                <img src="https://i.ibb.co/9HCsmjf/product-10.jpg" alt="" />
+                <h4>Sepatu Lari</h4>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <p>Rp 450.000</p>
+            </div>
+
+            <div class="col-4">
+                <img src="https://i.ibb.co/JQ2MBHR/product-11.jpg" alt="" />
+                <h4>Sepatu Olahraga</h4>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p>Rp 400.000</p>
+            </div>
+
+            <div class="col-4">
+                <img src="https://i.ibb.co/nRZMs6Y/product-12.jpg" alt="" />
+                <h4>Celana Pria</h4>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <p>Rp 300.000</p>
+            </div>
+        </div>
+
+        <div class="page-btn">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>&#8594;</span>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Aplikasi Kami</h3>
+                    <p>Download Aplikasi tersedia untuk Android dan Ios Mobile</p>
+                    <div class="app-logo">
+                        <img src="https://i.ibb.co/KbPTYYQ/play-store.png" alt="" />
+                        <img src="https://i.ibb.co/hVM4X2p/app-store.png" alt="" />
+                    </div>
+                </div>
+
+                <div class="footer-col-2">
+                    <h3>Hardy Store</h3>
+                    <p>
+                        Tujuan Kami Adalah Untuk Secara Berkelanjutan Membuat Kesenangan dan Manfaat Olahraga Dapat
+                        Diakses oleh Banyak Orang.
+                    </p>
+                </div>
+
+                <div class="footer-col-3">
+                    <h3>Link Terkait</h3>
+                    <ul>
+                        <li><a href="#">Kupon</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                        <li><a href="#">Gabung Afiliasi</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="footer-col-4">
+                    <h3>Follow Kami</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">YouTube</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <hr />
+            <p class="copyright">Copyright &copy; 2022 - Hardy Store</p>
+        </div>
+    </div>
+
+    <script>
+        var MenuItems = document.getElementById('MenuItems');
+        MenuItems.style.maxHeight = '0px';
+
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == '0px') {
+                MenuItems.style.maxHeight = '200px';
+            } else {
+                MenuItems.style.maxHeight = '0px';
+            }
+        }
+    </script>
+</body>
+
+</html>
